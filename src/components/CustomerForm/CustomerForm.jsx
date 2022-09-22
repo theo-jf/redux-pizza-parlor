@@ -18,7 +18,7 @@ function CustomerForm() {
         event.preventDefault();
         // create action for dispatch with payload object with customer data
         const action = {
-            type: 'SET_CUST',
+            type: 'SET_CUSTOMER',
             payload: {
                 customer_name: name,
                 street_address: streetAddress,

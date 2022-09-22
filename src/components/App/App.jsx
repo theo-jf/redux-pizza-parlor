@@ -50,6 +50,9 @@ function App() {
           <p>Pizza is great.</p>
           <PizzaList />
         </Route>
+        <Route exact path="/CustomerForm">
+          <CustomerForm />
+        </Route>
         <Route exact path ="/ConfirmOrder">
           <ConfirmOrder />
         </Route>
