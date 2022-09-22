@@ -88,7 +88,7 @@ function Admin (){
                                         return(
                                             <StyledTableRow key={order.id}>
                                                 <StyledTableCell>{order.customer_name}</StyledTableCell>
-                                                <StyledTableCell>{order.time}</StyledTableCell>
+                                                <StyledTableCell>{order.formatted_time}</StyledTableCell>
                                                 <StyledTableCell>{order.type}</StyledTableCell>
                                                 <StyledTableCell>{order.total}</StyledTableCell>
                                             </StyledTableRow>
