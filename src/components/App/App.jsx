@@ -8,6 +8,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { HashRouter as Router, Route, Link} from 'react-router-dom';
 
 // Import Components Here
+
+import PizzaItem from '../PizzaItem/PizzaItem';
 import PizzaList from '../PizzaList/PizzaList';
 import ConfirmOrder from '../ConfirmOrder/ConfirmOrder';
 
