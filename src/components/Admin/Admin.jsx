@@ -36,30 +36,32 @@ function Admin (){
 
 
     return(
-       
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Time Order Placed</th>
-                    <th>Type</th>
-                    <th>Cost</th>
-                </tr>
-            </thead>
-            <tbody>
-                {orders.map(order => {
-                    return(
-                        <tr key={order.id}>
-                            <td>{order.customer_name}</td>
-                            <td>{order.time}</td>
-                            <td>{order.type}</td>
-                            <td>{order.total}</td>
-                        </tr>
-                    );
-                })}
+       <>
+       <button onClick={getOrders}>Get New Orders!</button>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Time Order Placed</th>
+                        <th>Type</th>
+                        <th>Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {orders.map(order => {
+                        return(
+                            <tr key={order.id}>
+                                <td>{order.customer_name}</td>
+                                <td>{order.time}</td>
+                                <td>{order.type}</td>
+                                <td>{order.total}</td>
+                            </tr>
+                        );
+                    })}
 
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </>
     );
 
 }
