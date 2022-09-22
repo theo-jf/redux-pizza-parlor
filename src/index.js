@@ -8,6 +8,14 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
+const allPizzas = (state=[], action) =>{
+    if(action.type === 'SET_PIZZAS'){
+        return action.payload;
+    }
+        return state;
+}
+
+
 const selectedPizzas = (state = [], action) => {
 
     switch(action.type) {
@@ -54,6 +62,12 @@ const currentCustomer = (state = {}, action) => {
     return state;
 }
 
+const orders = (state = [], action) => {
+    if(action.type === 'ADD_ORDERS'){
+        return action.payload;
+    }
+        return state;
+}
 
 // Create store
 const storeInstance = createStore(
@@ -61,11 +75,14 @@ const storeInstance = createStore(
         {
             selectedPizzas,
             totalPrice,
-            currentCustomer
+            currentCustomer,
+            orders,
+            allPizzas
         }
     ),
     applyMiddleware(logger)
 )
+
 
 
 ReactDOM.render( 
