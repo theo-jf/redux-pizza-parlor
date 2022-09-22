@@ -39,10 +39,10 @@ const totalPrice = (state = 0, action) => {
     // Adds or removes Pizza Price
     switch(action.type) {
         case 'ADD_PIZZA':
-            return state + action.payload.price;
+            return state + Number(action.payload.price);
 
         case 'REM_PIZZA':
-            return state - action.payload.price;
+            return state - Number(action.payload.price);
 
         case 'CLEAR_ALL':
             return 0;
