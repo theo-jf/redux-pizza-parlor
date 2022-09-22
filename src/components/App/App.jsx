@@ -9,6 +9,7 @@ import { HashRouter as Router, Route, Link} from 'react-router-dom';
 
 // Import Components Here
 import PizzaList from '../PizzaList/PizzaList';
+import ConfirmOrder from '../ConfirmOrder/ConfirmOrder';
 
 
 function App() {
@@ -46,7 +47,8 @@ function App() {
         
         <img src='images/pizza_photo.png' />
         <p>Pizza is great.</p>
-        <PizzaList />
+        {/* <PizzaList /> */}
+        <ConfirmOrder />
   
       </Router>
     </div>
