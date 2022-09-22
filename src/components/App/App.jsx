@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { HashRouter as Router, Route, Link} from 'react-router-dom';
 
 // Import Components Here
+import PizzaList from '../PizzaList/PizzaList';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
         
         <img src='images/pizza_photo.png' />
         <p>Pizza is great.</p>
+        <PizzaList />
   
       </Router>
     </div>
