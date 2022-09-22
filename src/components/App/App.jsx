@@ -9,7 +9,7 @@ import { HashRouter as Router, Route, Link} from 'react-router-dom';
 
 // Import Components Here
 import Admin from '../Admin/Admin';
-
+import CustomerForm from '../CustomerForm/CustomerForm';
 import PizzaList from '../PizzaList/PizzaList';
 import ConfirmOrder from '../ConfirmOrder/ConfirmOrder';
 import Header from '../Header/Header';
