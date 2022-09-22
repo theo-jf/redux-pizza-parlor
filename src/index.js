@@ -62,6 +62,12 @@ const currentCustomer = (state = {}, action) => {
     return state;
 }
 
+const orders = (state = [], action) => {
+    if(action.type === 'ADD_ORDERS'){
+        return action.payload;
+    }
+        return state;
+}
 
 // Create store
 const storeInstance = createStore(
@@ -70,11 +76,13 @@ const storeInstance = createStore(
             selectedPizzas,
             totalPrice,
             currentCustomer,
+            orders,
             allPizzas
         }
     ),
     applyMiddleware(logger)
 )
+
 
 
 ReactDOM.render( 

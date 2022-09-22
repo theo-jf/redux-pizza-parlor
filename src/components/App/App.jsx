@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { HashRouter as Router, Route, Link} from 'react-router-dom';
 
 // Import Components Here
+import Admin from '../Admin/Admin';
 
 import PizzaList from '../PizzaList/PizzaList';
 import ConfirmOrder from '../ConfirmOrder/ConfirmOrder';
@@ -48,16 +49,19 @@ function App() {
         
         <img src='images/pizza_photo.png' />
         <p>Pizza is great.</p>
+
+
         <Route exact path ="/">
           <PizzaList />
         </Route>
         <Route exact path ="/ConfirmOrder">
           <ConfirmOrder />
         </Route>
-        {/* <Route exact path ="/admin">
-
-        </Route> */}
+        <Route exact path ="/admin">
+          <Admin />
+        </Route>
   
+
       </Router>
     </div>
   );
