@@ -9,7 +9,6 @@ import { HashRouter as Router, Route, Link} from 'react-router-dom';
 
 // Import Components Here
 
-import PizzaItem from '../PizzaItem/PizzaItem';
 import PizzaList from '../PizzaList/PizzaList';
 import ConfirmOrder from '../ConfirmOrder/ConfirmOrder';
 
@@ -49,8 +48,15 @@ function App() {
         
         <img src='images/pizza_photo.png' />
         <p>Pizza is great.</p>
-        {/* <PizzaList /> */}
-        <ConfirmOrder />
+        <Route exact path ="/">
+          <PizzaList />
+        </Route>
+        <Route exact path ="/ConfirmOrder">
+          <ConfirmOrder />
+        </Route>
+        {/* <Route exact path ="/admin">
+
+        </Route> */}
   
       </Router>
     </div>
