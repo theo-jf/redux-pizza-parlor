@@ -12,6 +12,7 @@ import Admin from '../Admin/Admin';
 
 import PizzaList from '../PizzaList/PizzaList';
 import ConfirmOrder from '../ConfirmOrder/ConfirmOrder';
+import Header from '../Header/Header';
 
 
 function App() {
@@ -43,15 +44,10 @@ function App() {
   return (
     <div className='App'>
       <Router>
-        <header className='App-header'>
-          <h1 className='App-title'>Prime Pizza</h1>
-        </header>
-        
-        {/* <img src='images/pizza_photo.png' />
-        <p>Pizza is great.</p> */}
-
-
+        <Header />
         <Route exact path ="/">
+          <img src='images/pizza_photo.png' />
+          <p>Pizza is great.</p>
           <PizzaList />
         </Route>
         <Route exact path ="/ConfirmOrder">
@@ -60,8 +56,6 @@ function App() {
         <Route exact path ="/admin">
           <Admin />
         </Route>
-  
-
       </Router>
     </div>
   );

@@ -9,6 +9,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
 
 
 //"name", "description", "price", "image_path"
@@ -61,7 +62,7 @@ function PizzaItem({pizza}) {
     
 
     return (
-        <Card sx={{ maxWidth: 345 }} key={pizza.id}>
+        <Card sx={{ display: 'inline-block', maxWidth: 345, m: 3 }} key={pizza.id}>
             <CardMedia
                 component="img"
                 height="140"
@@ -69,12 +70,16 @@ function PizzaItem({pizza}) {
                 alt={pizza.name}
             />
             <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                {pizza.name} : {pizza.price}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                {pizza.description}
-                </Typography>
+                <Box component="div" sx={{textOverflow: 'ellipsis', overflow: 'auto', whiteSpace: 'nowrap'}}>
+                    <Typography gutterBottom variant="h5" component="div">
+                    {pizza.name} : {pizza.price}
+                    </Typography>
+                </Box>
+                <Box component="div" sx={{ minHeight: 100}}>
+                    <Typography variant="body2" color="text.secondary">
+                    {pizza.description}
+                    </Typography>
+                </Box>
             </CardContent>
             <CardActions>
                 <Button size="small" onClick={handleClick}>{pizzaToggle} Pizza</Button>
