@@ -9,7 +9,7 @@ export default function Header() {
     return(
         <header className='App-header'>
             <h1 className='App-title'>Prime Pizza! 🫠</h1>
-            <h2>Total: {total}</h2>
+            <h2>Total: {Number(total.toFixed(2))}</h2>
         </header>
     )
 }
