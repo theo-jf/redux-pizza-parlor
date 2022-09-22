@@ -2,25 +2,30 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 export default function ConfirmOrder() {
 
     // Dispatch for CLEAR_ALL on order confirm
     const dispatch = useDispatch();
 
+    const history = useHistory();
+
     const pizzasInOrder = useSelector(selector => selector.selectedPizzas);
     const customer = useSelector(selector => selector.currentCustomer);
     const totalPrice = useSelector(selector => selector.totalPrice);
 
     const [orderObject, setOrderObject] = useState({
-                                            customer_name: customer.name,
-                                            street_address: customer.street,
+                                            customer_name: customer.customer_name,
+                                            street_address: customer.street_address,
                                             city: customer.city,
                                             zip: customer.zip,
                                             type: customer.type,
                                             total: totalPrice,
                                             pizzas: pizzasInOrder
                                         });
+
+                                        console.log(orderObject);
 
 
     // POST request to send confirmed order
@@ -33,8 +38,9 @@ export default function ConfirmOrder() {
             const action = {
                 type: 'CLEAR_ALL'
             }
+            // setOrderObject({});
+            history.push("/");
             dispatch(action);
-            setOrderObject({});
         })
         .catch(error => {
             alert('Order submission error, please try again');
@@ -48,6 +54,7 @@ export default function ConfirmOrder() {
             <h3>{orderObject.customer_name}</h3>
             <h3>{orderObject.street_address}</h3>
             <h3>{orderObject.city}</h3>
+            <h3>{orderObject.zip}</h3>
             <h3>For {orderObject.type}</h3>
             <table>
                 <thead>
