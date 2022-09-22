@@ -8,6 +8,14 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
+const allPizzas = (state=[], action) =>{
+    if(action.type === 'SET_PIZZAS'){
+        return action.payload;
+    }
+        return state;
+}
+
+
 const selectedPizzas = (state = [], action) => {
 
     switch(action.type) {
@@ -68,7 +76,8 @@ const storeInstance = createStore(
             selectedPizzas,
             totalPrice,
             currentCustomer,
-            orders
+            orders,
+            allPizzas
         }
     ),
     applyMiddleware(logger)
