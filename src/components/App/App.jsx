@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
+import CustomerForm from '../CustomerForm/CustomerForm';
 
 // Router 
 import { useDispatch, useSelector } from 'react-redux';
@@ -20,6 +21,8 @@ function App() {
         <img src='images/pizza_photo.png' />
         <p>Pizza is great.</p>
   
+        <p>Here is the Customer Form:</p>
+        <CustomerForm />
       </Router>
     </div>
   );
