@@ -30,6 +30,9 @@ const selectedPizzas = (state = [], action) => {
         case 'CLEAR_ALL':
             // State is now an empty array
             return [];
+
+        case 'CLEAR_TOTAL_AND_PIZZAS':
+            return [];
     }
     return state;
 }
@@ -45,6 +48,9 @@ const totalPrice = (state = 0, action) => {
             return state - Number(action.payload.price);
 
         case 'CLEAR_ALL':
+            return 0;
+
+        case 'CLEAR_TOTAL_AND_PIZZAS':
             return 0;
     }
     return state;
