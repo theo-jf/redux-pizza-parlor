@@ -24,6 +24,8 @@ function Admin (){
     
     useEffect(() => {
         getOrders();
+        dispatch({type: 'MAKE_HIDDEN'});
+        dispatch({type: 'MAKE_TOTAL_HIDDEN'});
       }, []);
      
       //add a button to call new orders?

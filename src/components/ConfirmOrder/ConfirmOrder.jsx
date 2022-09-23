@@ -41,6 +41,7 @@ export default function ConfirmOrder() {
             // setOrderObject({});
             history.push("/");
             dispatch(action);
+            dispatch({type: 'MAKE_HIDDEN'});
         })
         .catch(error => {
             alert('Order submission error, please try again');

@@ -69,6 +69,27 @@ const orders = (state = [], action) => {
         return state;
 }
 
+const back = (state = 'backHidden', action) => {
+
+    switch (action.type) {
+        case 'MAKE_HIDDEN':
+            return 'backHidden'
+        case 'MAKE_SHOWN':
+            return 'back';
+    }
+    return state;
+}
+
+const total = (state = '', action) => {
+    switch (action.type) {
+        case 'MAKE_TOTAL_HIDDEN':
+            return 'hidden'
+        case 'MAKE_TOTAL_SHOWN':
+            return '';
+    }
+    return state;
+}
+
 // Create store
 const storeInstance = createStore(
     combineReducers(
@@ -77,7 +98,9 @@ const storeInstance = createStore(
             totalPrice,
             currentCustomer,
             orders,
-            allPizzas
+            allPizzas,
+            back,
+            total
         }
     ),
     applyMiddleware(logger)

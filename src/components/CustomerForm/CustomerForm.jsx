@@ -28,6 +28,7 @@ function CustomerForm() {
             }
         }
         dispatch(action);
+        dispatch({type: 'MAKE_SHOWN'});
         // NEXT button needs to send us to the Confirm Order page
         history.push("/ConfirmOrder");
         // clear inputs
