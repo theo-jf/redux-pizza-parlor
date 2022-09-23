@@ -10,8 +10,9 @@ function PizzaList () {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch({type: 'MAKE_TOTAL_SHOWN'})
-    })
+        dispatch({type: 'MAKE_TOTAL_SHOWN'}),
+        dispatch({type: 'MAKE_HIDDEN'})
+    },[])
 
     const pizzas = useSelector(store => store.allPizzas);
     const history = useHistory();
