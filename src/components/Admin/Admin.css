@@ -6,3 +6,24 @@
 .button{
     margin-top: 40px;
 }
+
+.hidden {
+    visibility: hidden;
+}
+
+.back {
+    position: absolute;
+    font-size: 40px;
+    padding-left: 30px;
+}
+
+.backHidden {
+    position: absolute;
+    font-size: 40px;
+    padding-left: 30px;
+    visibility: hidden;
+}
+
+.back:hover {
+    cursor: pointer;
+}
